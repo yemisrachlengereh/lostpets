@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="Cssrecipe.css"/>
+</head>
+<body>
+<nav class="navbar navbar-default" >
+
+    <div class="container-fluid" id="blue">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <spen class="icon-bar"></spen>
+            </button>
+            <a class="navbar-brand" href="#">Home</a>
+
+        </div>
+
+        <div class= "collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/add">Add Pets </a></li>-->
+                <li><a href="/"> View List of Pets</a></li>
+                <li><a href="/updatepage">Update Peats Status</a></li>
+                <li><a href="/deletepet"> Delete a Pet Record</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+</nav>
+
+<div class="container">
+
+
+
+
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</div>
+<div class="container">
+<form action="#" th:action="@{/process}"
+      th:object="${pet}"
+      method="post">
+
+    Name:<input type="text" th:field="*{name}" />
+    <span th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}"></span><br />
+
+    Age:<input type="text" th:field="*{age}" />
+    <span th:if="${#fields.hasErrors('age')}"
+          th:errors="*{age}"></span><br />
+
+
+    Type_of_animal:<input type="text" th:field="*{type_of_animal}" />
+    <span th:if="${#fields.hasErrors('type_of_animal')}"
+          th:errors="*{type_of_animal}"></span><br />
+
+    Breed:<input type="text" th:field="*{breed}" />
+    <span th:if="${#fields.hasErrors('breed')}"
+          th:errors="*{breed}"></span><br />
+
+    Colour:<input type="text" th:field="*{colour}" />
+    <span th:if="${#fields.hasErrors('colour')}"
+          th:errors="*{colour}"></span><br />
+
+
+    Distingushing_features:<input type="text" th:field="*{distingushing_features}" />
+    <span th:if="${#fields.hasErrors('distingushing_features')}"
+          th:errors="*{distingushing_features}"></span><br />
+
+
+    Owner_contactnumber:<input type="text" th:field="*{owner_contactnumber}" />
+    <span th:if="${#fields.hasErrors('Owner_contactnumber')}"
+          th:errors="*{owner_contactnumber}"></span><br />
+
+    <br/>
+    <input type="submit" value="Submit" />
+</form>
+</div>
+</body>
+
+</html>
+
+
